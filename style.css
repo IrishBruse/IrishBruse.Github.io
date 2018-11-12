@@ -1,13 +1,60 @@
 body 
 {
-    padding: 0;
     margin: 10px;
-    background-color: rgba(61, 61, 61, 0);
+    background-color: rgb(214, 214, 214);
 }
 
-.Logo
+body > header
+{    
+    box-sizing: border-box;
+    margin: 1.5em auto 2.5em auto;
+    text-align: center;
+    max-width: 1080px;
+}
+
+body > header > ol
+{    
+    list-style-type: none;
+    text-align: center;    
+}
+
+body > header li
 {
-    cursor: pointer;
-    border:  none;  
-    align-content: center; 
+    display: inline-block;
+    white-space: nowrap;
+}
+
+body > header li:not(:first-child)::before 
+{
+    font-size: 22px;
+    content: "/ ";
+}
+
+body > header a , a:link
+{    
+    font-size: 22px;
+    color: black;
+    text-decoration-line: none;
+}
+
+body > header a:hover 
+{
+    text-decoration-line: underline;
+}
+
+
+body > main
+{
+    padding: 2em auto 1em auto;
+    margin: 1em auto 1em auto;
+    box-sizing: border-box;
+    max-width: 1080px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+
+
+body > footer
+{
+    text-align: center;
 }
