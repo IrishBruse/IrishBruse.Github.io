@@ -1,29 +1,70 @@
 body 
 {
-    background-color: rgb(215, 215, 215);
-    color: rgb(0, 0, 0);
+    background-color: white;
+    color: rgb(58, 58, 58);
     margin: 0;
     padding: 0;
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
 
 body > header
 {        
-    text-align: center;
-    margin-top: 25px;    
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
+    margin: 25px;
 }
 
 
 
 body > main
-{
-    background-color: white;
-    max-width: 80%;    
+{ 
+    text-align: center;    
+    margin-top: 3em;
     margin-left: auto;
     margin-right: auto;    
-    text-align: left;
+}
+
+
+.Gallery 
+{
+    text-align: center;
+    
+    margin-top: 3em;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto;
+}
+
+.Gallery > div img
+{
+    margin: auto;
+    max-height: 256px;
+    max-width: 455.11px;
+    vertical-align: middle;
+}
+
+.Gallery > div h1
+{
+    text-align: center;
+}
+
+.Space
+{
+    margin-top: 10%;
+}
+
+footer
+{
+    margin-top: 40px;
+}
+
+h1
+{
+    margin: 20px;
+    font-size: 2em;    
 }
