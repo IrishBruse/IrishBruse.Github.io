@@ -1,14 +1,12 @@
-body 
+*
 {
     background-color: white;
-    color: rgb(58, 58, 58);
-    margin: 0;
-    padding: 0;
+    color: rgb(29, 29, 29);
+    margin: 0px;
+    padding: 0px;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-
 
 body > header
 {        
@@ -16,39 +14,28 @@ body > header
     margin: 25px;
 }
 
-
-
 body > main
-{ 
-    text-align: center;    
+{    
     margin-top: 3em;
-    margin-left: auto;
-    margin-right: auto;    
 }
 
-
-.Gallery 
+.Gallery
 {
-    text-align: center;
-    
-    margin-top: 3em;
-    margin-left: auto;
-    margin-right: auto;
-    
     display: grid;
-    grid-gap: 20px;
     grid-template-columns: auto auto;
+    grid-gap: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-.Gallery > button img
-{
-    margin: auto;
-    max-height: 256px;
-    max-width: 455.11px;
-    vertical-align: middle;
+.Gallery .Item img
+{    
+    width: 100%;
+    height: auto;
 }
 
-.Gallery > button ,input[type="submit"], input[type="reset"]
+
+button ,input[type="submit"], input[type="reset"]
 {
     background-color: white;
     cursor: pointer;
@@ -57,19 +44,10 @@ body > main
     outline: inherit
 }
 
-.Gallery > button h1
-{
-    text-align: center;
-}
-
-.Space
-{
-    margin-top: 10%;
-}
-
 footer
 {
-    margin-top: 40px;
+    margin: 40px;
+    font-size: 1.5em;  
 }
 
 h1
