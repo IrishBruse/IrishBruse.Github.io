@@ -40,7 +40,7 @@ body > main
     grid-template-columns: auto auto;
 }
 
-.Gallery > div img
+.Gallery > button img
 {
     margin: auto;
     max-height: 256px;
@@ -48,7 +48,16 @@ body > main
     vertical-align: middle;
 }
 
-.Gallery > div h1
+.Gallery > button ,input[type="submit"], input[type="reset"]
+{
+    background-color: white;
+    cursor: pointer;
+    border: none;   
+    display: inline-block;
+    outline: inherit
+}
+
+.Gallery > button h1
 {
     text-align: center;
 }
