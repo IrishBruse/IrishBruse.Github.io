@@ -14,44 +14,10 @@ body > header
     margin: 25px;
 }
 
-body > main
-{    
-    margin-top: 3em;
-}
-
-.Gallery
-{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
-}
-
-.Gallery .Item img
-{    
-    width: 100%;
-    height: auto;
-}
-
-
-button ,input[type="submit"], input[type="reset"]
-{
-    background-color: white;
-    cursor: pointer;
-    border: none;   
-    display: inline-block;
-    outline: inherit
-}
-
 footer
 {
-    margin: 40px;
+    position: fixed;
+    width: 100%;
+    bottom:10px;
     font-size: 1.5em;  
-}
-
-h1
-{
-    margin: 20px;
-    font-size: 2em;    
 }
