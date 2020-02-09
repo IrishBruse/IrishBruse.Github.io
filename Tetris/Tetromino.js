@@ -1,13 +1,13 @@
-let type;
-
-let x;
-let y;
-let rotation;
-
-let blocks;
-
 class Tetromino
 {
+    type;
+
+    x;
+    y;
+    rotation;
+
+    blocks;
+
     constructor(newType)
     {
         this.type = newType;
@@ -92,7 +92,7 @@ class Tetromino
         {
             let block = this.blocks[ i ];
 
-            if (this.y + block.y == GRID_HEIGHT - 1)
+            if (this.y + block.y + 1 == GRID_HEIGHT) 
             {
                 return true;
             }
