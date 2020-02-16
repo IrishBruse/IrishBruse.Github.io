@@ -18,7 +18,7 @@ const LEFT_SHIFT = 16;
 
 function setup()
 {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, windowHeight - 60);
 
     restartGame();
 
@@ -34,13 +34,13 @@ function setup()
 
 function windowResized()
 {
-    resizeCanvas(windowWidth, windowHeight);
+    resizeCanvas(windowWidth, windowHeight - 60);
 }
 
 function draw()
 {
     background(255);
-    strokeWeight(0);
+    strokeWeight(2);
     update();
 
     for (let x = 0; x < GRID_WIDTH; x++)
@@ -61,7 +61,7 @@ function draw()
             fill(c);
 
             let xPos = (x * BOX_SIZE);
-            xPos += (windowWidth * 0.5);
+            xPos += ceil(windowWidth * 0.5);
             xPos -= (BOX_SIZE * 0.5 * GRID_WIDTH);
 
             square(xPos, (y * BOX_SIZE) - BOX_SIZE + 1, BOX_SIZE);
@@ -71,19 +71,10 @@ function draw()
     fill(0);
     textAlign(LEFT, TOP);
     textSize(40);
-    text("Score: " + score, 300, 20);
+    text("Score: " + score, 20, 20);
 
     textSize(20);
-    text("Stored piece", 320, 80);
-
-    for (let x = 0; x < 4; x++)
-    {
-        for (let y = 0; y < 3; y++)
-        {
-            fill(128);
-            square(310 + (x * BOX_SIZE), 120 + (y * BOX_SIZE), BOX_SIZE);
-        }
-    }
+    text("Stored piece", 45, 80);
 
     if (savedTetromino != null)
     {
@@ -91,21 +82,21 @@ function draw()
         for (let i = 0; i < savedTetromino.blocks.length; i++)
         {
             let block = savedTetromino.blocks[ i ];
-            square(block.x * BOX_SIZE + 350, block.y * BOX_SIZE + 160, BOX_SIZE);
+            square(block.x * BOX_SIZE + 80, block.y * BOX_SIZE + 160, BOX_SIZE);
         }
     }
 
     fill(0);
     textAlign(RIGHT, TOP);
     textSize(40);
-    text("How to play", windowWidth - 20, 20);
+    text("How to play", windowWidth - 40, 20);
 
     textAlign(RIGHT, TOP);
     textSize(20);
-    text("A and D move left and right", windowWidth - 20, 60);
-    text("W rotates piece, S drops faster", windowWidth - 20, 80);
-    text("Left shift stores current piece", windowWidth - 20, 100);
-    text("Spacebar drops piece instantaly", windowWidth - 20, 120);
+    text("A and D move left and right", windowWidth - 40, 60);
+    text("W rotates piece, S drops faster", windowWidth - 40, 80);
+    text("Left shift stores current piece", windowWidth - 40, 100);
+    text("Spacebar drops piece instantaly", windowWidth - 40, 120);
 }
 
 function update()

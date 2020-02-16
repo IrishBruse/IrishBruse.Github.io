@@ -9,18 +9,18 @@
             "buttonText": "Play Tetris"
         },
         {
-            "title": "My Github",
-            "image": "images/GitHub.png",
-            "discription": "This is my github where i post most of my code to.",
-            "buttonLink": "https://github.com/IrishBruse",
-            "buttonText": "Open Github"
-        },
-        {
             "title": "Hyperhop",
             "image": "images/Hyperhop.png",
             "discription": "This was a mobile game i made with the help of Josh Van Etten over a few months that we published to the app store and play store.",
             "buttonLink": "https://www.instagram.com/hyperhop",
             "buttonText": "Open Instagram"
+        },
+        {
+            "title": "My Github",
+            "image": "images/GitHub.png",
+            "discription": "This is my github where i post most of my code to.",
+            "buttonLink": "https://github.com/IrishBruse",
+            "buttonText": "Open Github"
         }
     ]
 }
