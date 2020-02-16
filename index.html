@@ -1,29 +1,38 @@
-<!DOCTYPE html5>
-<html lang="">
+<!doctype html>
+<html lang="en">
 
 <head>
-	<link rel="shortcut icon" type="image/png" href="/Logo.png" />
-	<title>Home</title>
-	<meta charset="utf-8">
+    <title>Ethan Conneely's Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="images/Logo.png" />
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="projects.js"></script>
+    <script>
+        $.get("navigation.html", function (data)
+        {
+            $("#nav-placeholder").replaceWith(data);
+        });
+    </script>
 </head>
 
 <body>
-	<header>
-		<table style="height: 40px;">
-			<tbody>
-				<tr>
-					<td style="width: 48px; text-align: center;"><a title="Home" href="./">Home</a></td>
-					<td style="width: 59px; text-align: center;"><a title="Tetris" href="./Tetris">Tetris</a></td>
-					<td style=" width: 49px; text-align: center;"><a title="About" href="">About</a></td>
-				</tr>
-			</tbody>
-		</table>
-		<p style="text-align: center;">&nbsp;</p>
-	</header>
+    <div id="nav-placeholder"></div>
+    <div style="height: 2em;"></div>
+    <div class="container">
+        <h3 class="text-center">Projects</h3>
+        <p class="text-center">These are all my projects i have worked on over the years. They are either in Unity
+            ,P5.js or Java.</p>
+    </div>
 
-	<main>
-		<!-- <p>Made by IrishBruse</p> -->
-	</main>
+    <div class="container">
+        <div class="row" id="project"> </div>
+    </div>
+
+    <footer>
+        <p class="text-center">© Copyright 2020 Ethan Conneely</p>
+    </footer>
 </body>
 
 </html>
