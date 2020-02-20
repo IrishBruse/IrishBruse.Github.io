@@ -3,8 +3,8 @@ let BOX_SIZE = 40;
 let GRID_WIDTH = 10;
 let GRID_HEIGHT = 21;
 
-let tiles = new Array();
-let colors = new Array();
+let tiles = [];
+let colors = [];
 let dropTimer = 0;
 let tetromino;
 let tetrominoDropSpeed = 1000;
@@ -41,6 +41,7 @@ function draw()
 {
     background(255);
     strokeWeight(2);
+    stroke(0, 0, 0, 128);
     update();
 
     for (let x = 0; x < GRID_WIDTH; x++)
@@ -67,6 +68,9 @@ function draw()
             square(xPos, (y * BOX_SIZE) - BOX_SIZE + 1, BOX_SIZE);
         }
     }
+
+    strokeWeight(0);
+    stroke(0);
 
     fill(0);
     textAlign(LEFT, TOP);
@@ -266,10 +270,6 @@ function restartGame()
     for (let x = 0; x < GRID_WIDTH; x++)
     {
         tiles[ x ] = [];
-    }
-
-    for (let x = 0; x < GRID_WIDTH; x++)
-    {
         for (let y = 0; y < GRID_HEIGHT; y++)
         {
             tiles[ x ][ y ] = 0;
