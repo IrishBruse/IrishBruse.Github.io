@@ -13,3 +13,27 @@
         column-count: 1;
     }    
 }
+
+.bg-nav
+{
+    background-color: #343434;
+}
+
+.bg-main
+{
+    background-color: #e0e0e0;
+}
+
+.divider-main
+{
+    color: #343434;
+}
+
+section[id]:before
+{
+    display: block;
+    height: 38px;   /* equal to the header height */
+    margin-top: -38px;  /* negative margin equal to the header height */
+    visibility: hidden;
+    content: "";
+}

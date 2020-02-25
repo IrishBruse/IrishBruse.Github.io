@@ -3,28 +3,28 @@
     [
         {
             "title": "Tetris",
-            "image": "images/Tetris.png",
+            "image": "files/Tetris.png",
             "discription": "This is a p5.js based clone of Tetris. This was my first attempt at using javascript to make a game.",
             "buttonLink": "/Tetris",
             "buttonText": "Play Tetris"
         },
         {
             "title": "Hyperhop",
-            "image": "images/Hyperhop.png",
+            "image": "files/Hyperhop.png",
             "discription": "This was a mobile game i made with the help of Josh Van Etten over a few months that we published to the app store and play store.",
             "buttonLink": "https://www.instagram.com/hyperhop",
             "buttonText": "Open Instagram"
         },
         {
             "title": "Snake",
-            "image": "images/Snake.png",
+            "image": "files/Snake.png",
             "discription": "This is a P5.js based clone of Snake.",
             "buttonLink": "/Snake",
             "buttonText": "Play Snake"
         },
         {
             "title": "My Github",
-            "image": "images/GitHub.png",
+            "image": "files/GitHub.png",
             "discription": "This is my github where i post most of my code to.",
             "buttonLink": "https://github.com/IrishBruse",
             "buttonText": "Open Github"
