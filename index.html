@@ -2,109 +2,175 @@
 <html lang="en">
 
 <head>
-    <title>Ethan Conneely's Website</title>
+    <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/png" href="files/Logo.png" />
-    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="projects.js"></script>
-    <script>
-        $.get("navigation.html", function (data)
-        {
-            $("#nav-placeholder").replaceWith(data);
-        });
-    </script>
+    <script src="index.js"></script>
 </head>
 
 <body>
-    <div id="nav-placeholder"></div>
+    <header style="margin-bottom: 4rem;">
+        <div id="nav-placeholder"></div>
+    </header>
 
-    <section class="container bg-main" id="About">
-        <h1 class="text-center"><b>About</b></h1>
-        <p class="text-center">
-            I am an 18 year old programmer and game developer. I like to program in many different languages
-        </p>
-    </section>
+    <div class="container ">
 
-    <section class="container bg-main" id="Skills">
-        <h1 class="text-center"><b>Skills</b></h1>
+        <!-- Projects -->
+        <div class="row" style="margin-bottom: 10vh;">
 
-        <div class="row">
+            <div class="col-sm panel text-left">
+                <h1><b>
 
-            <div class="col-sm">
-                <h4>C#</h4>
-                <p>
-                    I have at least 5 years of experience using the C# language. I have used it in unity, xna,
-                    monogames and straight C# programming in visual studio.
+                        Projects
+
+                    </b></h1>
+
+                <p class="text-justify paragraph-margin">
+
+                    I make many projects in a variety of different languages and using many different libraries and
+                    engines.
+                    I have a list of all the libraries, languages and game engines I have used over the years below.
+
                 </p>
+                <a href="/Libraries" class="btn bg-blue text-white flex" id="projectButton">
+                    <b>
+
+                        Libraries used
+
+                    </b>
+                </a>
             </div>
 
-            <div class="col-sm">
-                <h4>Java</h4>
-                <p>
-                    I have 1-2 years experience in java. I have used it with openGL and minecraft modding.
-                </p>
+            <div class="col-sm panel">
+                <div class="card raise-up">
+                    <img src="files/Projects.png" alt="" class="card-img-top" id="projectImage">
+                    <div class="card-discription text-center">
+                        <h3 class="card-title text-center" id="projectTitle">Projects</h3>
+                        <p class="card-text text-justify paragraph-margin" id="projectDiscription">
+
+                            A list of every project, game and prototype i have ever made all in one place for
+                            convienence.
+
+                        </p>
+                        <a href="/Projects" class="btn bg-green text-white" id="projectButton"><b>Go to projects</b></a>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-sm">
-                <h4>Unity</h4>
-                <p>
-                    I have 3-4 years experience using unity with C# language. During so I leared
-                    Object-Oriented-Programming
+        </div>
+
+        <!-- Youtube and github -->
+        <div class="row" style="margin-bottom: 10vh;">
+
+            <div class="col-sm panel">
+                <div class="card raise-up">
+                    <img src="files/GitHub.png" alt="" class="card-img-top" id="projectImage">
+                    <div class="card-discription text-center">
+                        <h3 class="card-title text-center" id="projectTitle">Github</h3>
+                        <p class="card-text text-justify paragraph-margin">
+
+                            The source code to most of my projects I work on and anything I have contributed to.
+
+                        </p>
+                        <a href="/Projects" class="btn bg-green text-white" id="projectButton"><b>Go to Github</b></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm panel text-right">
+                <h1><b>
+
+                        Github
+
+                    </b></h1>
+
+                <p class="text-justify paragraph-margin">
+
+                    Most of the projects I work on go here. I like sharing source code so anyone can have a poke around and even if they want point out
+                    flaws or improvements.
+
                 </p>
             </div>
 
         </div>
 
-        <div class="row">
 
-            <div class="col-sm">
-                <h4>Visual Studio</h4>
-                <p>
-                    I have 5 years experience with visual studio.
-                </p>
+        <h1 class="text-center" style="margin-bottom: 2em;">Featured Projects</h1>
+
+        <!-- Featured projects -->
+        <div class="row" style="margin-bottom: 10vh;">
+            <div class="card-deck">
+
+                <div class="col-sm ">
+                    <div class="card raise-up">
+                        <img src="Projects/Asteroids/Thumbnail.png" alt="" class="card-img-top " id="projectImage">
+                        <div class="card-discription text-center">
+                            <h3 class="card-title text-left" id="projectTitle">Asteroids</h3>
+                            <p class="card-text text-justify" id="projectDiscription">Asteroids clone made in Monogame
+                                framework using C#.</p>
+                            <a href="/Projects/Asteroids" class="btn bg-green text-white" id="projectButton"><b>Go to Asteroids</b></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm ">
+                    <div class="card raise-up">
+                        <img src="Projects/HyperHop/Thumbnail.png" alt="" class="card-img-top" id="projectImage">
+                        <div class="card-discription text-center">
+                            <h3 class="card-title text-left" id="projectTitle">Hyper Hop</h3>
+                            <p class="card-text text-justify" id="projectDiscription">Mobile game released for Android
+                                and iOS. Made in Unity using C# language.</p>
+                            <a href="/Projects/Hyperhop" class="btn bg-green text-white" id="projectButton"><b>Go to
+                                    Hyper
+                                    Hop</b></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm ">
+                    <div class="card raise-up">
+                        <img src="Projects/Snake/Thumbnail.png" alt="" class="card-img-top" id="projectImage">
+                        <div class="card-discription text-center">
+                            <h3 class="card-title text-left" id="projectTitle">Snake</h3>
+                            <p class="card-text text-justify">Simple snake clone made in P5 in javascript, it runs
+                                directly in the browser here. Give it a go.</p>
+                            <a href="/Projects/Snake" class="btn bg-green text-white" id="projectButton">
+                                <b>Play Snake</b>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="row text-center text-white" style="margin: 0;">
+
+            <div class="col-sm" style=" padding: 0;">
+                <a href="https://www.youtube.com/channel/UCjALjyFZ5NTIjfs7LkheGUw"
+                    class="btn bg-red rounded-0 text-white" style="width: 100%; line-height: 4rem;">
+                    <b>YouTube</b>
+                </a>
             </div>
 
-
-            <div class="col-sm">
-                <h4>Git</h4>
-                <p>
-                    I am well experienced in using git and github as i use it as a form of back up many of my
-                    projects.
-                </p>
-            </div>
-
-
-            <div class="col-sm">
-                <h4>Javascrpt</h4>
-                <p>
-                    I have 6 months experience in javascript using P5.js and in web dev
-                </p>
+            <div class="col-sm" style=" padding: 0;">
+                <a href="https://twitter.com/IrishBruse" class="btn bg-blue rounded-0 text-white"
+                    style="width: 100%; line-height: 4rem;">
+                    <b>Twitter</b>
+                </a>
             </div>
 
         </div>
-    </section>
-
-    <section class="container bg-main" id="Projects">
-        <h1 class="text-center"><b>Projects</b></h1>
-        <p class="text-center">
-            These are all my projects i have worked on over the years. They are either in Unity, P5.js, Java or this
-            website.
-        </p>
-        <div class="container">
-            <div class="card-columns" id="project">
-            </div>
-        </div>
-    </section>
+    </footer>
 
 </body>
-
-<footer>
-    <p class="text-center">© Copyright 2020 Ethan Conneely</p>
-</footer>
 
 </html>
