@@ -14,10 +14,18 @@ let canvas;
 
 let score;
 
+let div;
+
 function setup()
 {
-    canvas = createCanvas(windowWidth, windowHeight - 60);
+    div = document.getElementById('sketch-div');
+    canvas = createCanvas(100, 100);
+    canvas.parent('sketch-div');
+
+    windowResized()
+
     canvas.mouseClicked(mouseClicked);
+
 
     for (let x = 0; x < GRID_WIDTH; x++)
     {
@@ -37,7 +45,7 @@ function setup()
 
 function windowResized()
 {
-    resizeCanvas(windowWidth, windowHeight - 60);
+    resizeCanvas(div.offsetWidth, div.offsetHeight);
 }
 
 function draw()
@@ -73,8 +81,8 @@ function draw()
     stroke(0);
     fill(0);
     textSize(50);
-    textAlign(LEFT, TOP);
-    text("Score: " + score, 10, 10);
+    textAlign(CENTER, TOP);
+    text("Score: " + score, windowWidth / 2, 0);
 
     if (snake.dead == true)
     {

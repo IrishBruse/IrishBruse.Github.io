@@ -4,24 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
-    <link rel="shortcut icon" type="image/png" href="/images/Logo.png" />
-    <script language="javascript" type="text/javascript" src="/libraries/p5.min.js"></script>
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/style.css">
-    <script language="javascript" type="text/javascript" src="Snake.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/files/Logo.png" />
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <script src="/navbar.js"></script>
+    <link rel="stylesheet" type="text/css" href="/navbar.css" />
+
     <script language="javascript" type="text/javascript" src="Game.js"></script>
+    <script language="javascript" type="text/javascript" src="Snake.js"></script>
+
+    <link rel="stylesheet" href="/main.css">
 
     <script>
-        $.get("../navigation.html", function (data)
+        $.get("/navigation.html", function (data)
         {
             $("#nav-placeholder").replaceWith(data);
+        });
+
+        window.addEventListener('keydown', function (e)
+        {
+            if (e.keyCode == 32 && e.target == document.body)
+            {
+                e.preventDefault();
+            }
         });
     </script>
 </head>
 
 <body>
     <div id="nav-placeholder"></div>
+
+    <div id="sketch-div" style="width: 100%; height: 80%;"></div>
+
+    <div class="text-center" style="line-height: 1em;">
+        <h1>
+            How To Play
+        </h1>
+        <p><b>W, A, S, and D to move</b></p>
+        <p>Collect the red square to grow your Snake</p>
+        <p>You die if you leave the grid or run into yourself</p>
+
+    </div>
 </body>
 
 </html>

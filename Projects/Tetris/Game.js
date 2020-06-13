@@ -18,7 +18,11 @@ const LEFT_SHIFT = 16;
 
 function setup()
 {
-    createCanvas(windowWidth, windowHeight - 60);
+    div = document.getElementById('sketch-div');
+    canvas = createCanvas(10,10);
+    canvas.parent('sketch-div');
+
+    windowResized()
 
     restartGame();
 
@@ -34,7 +38,7 @@ function setup()
 
 function windowResized()
 {
-    resizeCanvas(windowWidth, windowHeight - 60);
+    resizeCanvas(div.offsetWidth, div.offsetHeight);
 }
 
 function draw()
@@ -65,20 +69,21 @@ function draw()
             xPos += ceil(windowWidth * 0.5);
             xPos -= (BOX_SIZE * 0.5 * GRID_WIDTH);
 
-            square(xPos, (y * BOX_SIZE) - BOX_SIZE + 1, BOX_SIZE);
+            square(xPos, 80 + ((y * BOX_SIZE) - BOX_SIZE + 1), BOX_SIZE);
         }
     }
 
     strokeWeight(0);
     stroke(0);
-
     fill(0);
-    textAlign(LEFT, TOP);
-    textSize(40);
-    text("Score: " + score, 20, 20);
 
+    textAlign(CENTER, CENTER);
+    textSize(40);
+    text("Score: " + score, windowWidth / 2, 20);
+
+    textAlign(LEFT, TOP);
     textSize(20);
-    text("Stored piece", 45, 80);
+    text("Stored piece", 45, 20);
 
     if (savedTetromino != null)
     {
@@ -89,18 +94,6 @@ function draw()
             square(block.x * BOX_SIZE + 80, block.y * BOX_SIZE + 160, BOX_SIZE);
         }
     }
-
-    fill(0);
-    textAlign(RIGHT, TOP);
-    textSize(40);
-    text("How to play", windowWidth - 40, 20);
-
-    textAlign(RIGHT, TOP);
-    textSize(20);
-    text("A and D move left and right", windowWidth - 40, 60);
-    text("W rotates piece, S drops faster", windowWidth - 40, 80);
-    text("Left shift stores current piece", windowWidth - 40, 100);
-    text("Spacebar drops piece instantaly", windowWidth - 40, 120);
 }
 
 function update()

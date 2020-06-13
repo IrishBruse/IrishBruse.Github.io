@@ -1,0 +1,77 @@
+.page
+{
+    width: 80vw;
+    height: 85vh;
+    margin: 1em auto;
+}
+
+.page-link::selection { background-color: transparent; }
+
+.page-number
+{
+    margin: 0 0.5em;
+}
+
+.project
+{
+    animation-duration: 0.1s;
+    animation-timing-function: linear;
+    animation-name: slideInFromLeft;
+    animation-fill-mode: both;
+}
+
+.project-img
+{
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    filter: brightness(100%);
+}
+
+.project-img:hover
+{
+    filter: brightness(120%);
+    transition: filter 0.5s;
+}
+
+.project-title
+{
+    margin: .25em;
+}
+
+.hide
+{
+    position: absolute;
+    left: -9999px;
+}
+
+@keyframes slideInFromLeft 
+{
+    0% 
+    {
+        opacity: 0%;
+        transform: translateY(-5%);
+    }
+    100%
+    {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}
+
+.project:nth-child(1)  { animation-delay: 0.000s }
+.project:nth-child(2)  { animation-delay: 0.025s }
+.project:nth-child(3)  { animation-delay: 0.050s }
+.project:nth-child(4)  { animation-delay: 0.075s }
+.project:nth-child(5)  { animation-delay: 0.100s }
+.project:nth-child(6)  { animation-delay: 0.100s }
+.project:nth-child(7)  { animation-delay: 0.125s }
+.project:nth-child(8)  { animation-delay: 0.150s }
+.project:nth-child(9)  { animation-delay: 0.175s }
+.project:nth-child(10) { animation-delay: 0.200s }
+.project:nth-child(11) { animation-delay: 0.200s }
+.project:nth-child(12) { animation-delay: 0.225s }
+.project:nth-child(13) { animation-delay: 0.250s }
+.project:nth-child(14) { animation-delay: 0.275s }
+.project:nth-child(15) { animation-delay: 0.300s }
+.project:nth-child(16) { animation-delay: 0.325s }
