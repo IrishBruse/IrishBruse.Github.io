@@ -38,7 +38,7 @@ $(document).ready(function ()
 
             var tag = document.createElement("p");
             tag.className = "project-text flex-fill text-right";
-            tag.innerText = element.Tags;
+            tag.innerText = element.Tags.split(",")[ 0 ];
             container.appendChild(tag);
 
             project.appendChild(container);
