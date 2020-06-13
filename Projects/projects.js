@@ -22,15 +22,27 @@ $(document).ready(function ()
             project.className = "col-md-3 project";
 
             var img = document.createElement("img");
-            img.className = "project-img border rounded-10";
+            img.className = "project-img border rounded-10 raise-up";
             img.id = "projectImage";
             img.src = element.Path + "Thumbnail.png";
             project.appendChild(img);
 
-            var title = document.createElement("h5");
-            title.className = "project-title";
+
+            var container = document.createElement("div");
+            container.className = "mx-auto d-flex";
+
+            var title = document.createElement("p");
+            title.className = "project-text font-weight-bold flex-fill";
             title.innerText = element.Title;
-            project.appendChild(title);
+            container.appendChild(title);
+
+            var tag = document.createElement("p");
+            tag.className = "project-text flex-fill text-right";
+            tag.innerText = element.Tags;
+            container.appendChild(tag);
+
+            project.appendChild(container);
+
 
             var path = document.createElement("div");
             path.className = "hide";

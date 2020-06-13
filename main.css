@@ -50,14 +50,14 @@ body
 .raise-up
 {
     position: relative;
-    bottom: 0px;
     transition: bottom 0.25s;
-    transition: 0.25s;
+    bottom: 0px;
+
 }
 
 .raise-up:hover
-{
-    bottom: 5px;
+{   transition: bottom 0s;
+    bottom: 5px; 
 }
 
 .card-discription
