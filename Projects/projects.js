@@ -1,38 +1,50 @@
-let pageCount;
+let pageCount = 0;
+let currentPage = 0;
 
-let ItemsPerPage = 16;
+let ItemsPerPage = 20;
+let projects;
 
 $(document).ready(function () 
 {
     $.getJSON('projects.json', function (data)
     {
         let items = 200;
-        var page;
+
+        var page = document.getElementById("page");
+
         data.Projects.forEach(element =>
         {
             if (items >= ItemsPerPage)
             {
-                page = document.createElement("div");
-                page.className = "row page";
-                document.getElementById("pages").appendChild(page);
+                pageCount += 1;
+
+                var li = document.createElement("li");
+                li.className = "page-item page-number";
+                var a = document.createElement("a");
+                a.className = "page-link ";
+                a.innerText = pageCount;
+                li.appendChild(a);
+
+                document.getElementById("pageNumbers").appendChild(li);
+
                 items = 0;
             }
 
             var project = document.createElement("div");
-            project.className = "col-md-3 project";
+            project.className = "col-md-3 project ";
 
             var img = document.createElement("img");
-            img.className = "project-img border rounded-10 raise-up";
+            img.className = "project-img border rounded-5 raise-up";
             img.id = "projectImage";
             img.src = element.Path + "Thumbnail.png";
             project.appendChild(img);
 
 
             var container = document.createElement("div");
-            container.className = "mx-auto d-flex";
+            container.className = "mx-auto d-flex text";
 
             var title = document.createElement("p");
-            title.className = "project-text font-weight-bold flex-fill";
+            title.className = "project-text font-weight-bold flex-fill title";
             title.innerText = element.Title;
             container.appendChild(title);
 
@@ -45,7 +57,7 @@ $(document).ready(function ()
 
 
             var path = document.createElement("div");
-            path.className = "hide";
+            path.hidden = true;
             path.id = "path";
             path.innerText = element.Path;
             project.appendChild(path);
@@ -55,34 +67,29 @@ $(document).ready(function ()
             items++;
         });
 
-        pageCount = $(".page").length;
-
-        for (let i = 0; i < pageCount; i++)
-        {
-            var li = document.createElement("li");
-            li.className = "page-item page-number";
-            var a = document.createElement("a");
-            a.className = "page-link ";
-            a.innerText = i + 1;
-            li.appendChild(a);
-
-            document.getElementById("pageNumbers").appendChild(li);
-        }
-
         $(".prev").click(function ()
         {
-            showPage($("#pagin ul .active").index() - 1);
+            if (currentPage > 0)
+            {
+                currentPage--;
+            }
+            ShowPage(currentPage);
         });
 
         $(".next").click(function ()
         {
-            showPage($("#pagin ul .active").index() + 1);
+            if (currentPage < pageCount - 1)
+            {
+                currentPage++;
+            }
+            ShowPage(currentPage);
         });
 
         $("#pagin ul a").click(function (e)
         {
             e.preventDefault();
-            showPage($(this).parent().index());
+            currentPage = $(this).parent().index();
+            ShowPage(currentPage);
         });
 
         $(".project-img").click(function (e)
@@ -93,7 +100,9 @@ $(document).ready(function ()
             window.location.href = this.parentElement.querySelector("#path").innerText;
         });
 
-        showPage(0);
+        projects = document.getElementById("page").getElementsByClassName("project");
+
+        ShowPage(currentPage);
     });
 
     let t = document.getElementsByClassName("page-link");
@@ -104,13 +113,48 @@ $(document).ready(function ()
     }
 });
 
-showPage = function (pagination)
+ShowPage = function (pagination)
 {
-    if (pagination < 0 || pagination > pageCount - 1)
+    let shown = 0;
+    for (let i = 0; i < projects.length; i++)
     {
-        return;
+        projects[ i ].hidden = true;
+
+        if (projects[ i ].classList.contains("hide") == false)
+        {
+            if (i >= pagination * ItemsPerPage)
+            {
+                if (shown < ItemsPerPage)
+                {
+                    projects[ i ].hidden = false;
+                }
+                shown++;
+            }
+        }
     }
 
-    $(".page").hide().eq(pagination).show();
     $("#pagin li").removeClass("active").eq(pagination).addClass("active");
+}
+
+Searchbar = function ()
+{
+    let input = document.getElementById("search").getElementsByTagName("input")[ 0 ].value.toUpperCase();
+
+    for (let i = 0; i < projects.length; i++)
+    {
+        let p = projects[ i ].getElementsByClassName("text")[ 0 ].getElementsByClassName("title")[ 0 ];
+
+        let txtValue = (p.textContent || p.innerText).toUpperCase();
+
+        if (txtValue.indexOf(input) !== -1)
+        {
+            projects[ i ].classList.remove("hide");
+        }
+        else
+        {
+            projects[ i ].classList.add("hide");
+        }
+    }
+
+    ShowPage(0);
 }
