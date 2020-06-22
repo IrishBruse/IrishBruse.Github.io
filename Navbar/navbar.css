@@ -1,16 +1,28 @@
-.bg-nav
+.nav-items
 {
-    background-color: rgba(66, 133, 216, 0.678);
+    margin-left: auto;
+    margin-right: 2em;
+    font-weight: bold;
 }
 
-.nav-link
+.icon
 {
-    position:relative;
-    bottom: 0px;
-    transition: bottom 0.25s;
+    height:100%;
+    width: 100%;
+    opacity: 0.8;
+    transition: opacity 0.5s;
 }
 
-.nav-link:hover
+.icon:hover
 {
-    bottom: 2px;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.resume
+{
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 0;
 }

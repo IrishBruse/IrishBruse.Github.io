@@ -1,8 +1,10 @@
 let pageCount = 0;
 let currentPage = 0;
 
-let ItemsPerPage = 20;
+let ItemsPerPage = 12;
 let projects;
+let dividors;
+let page;
 
 $(document).ready(function () 
 {
@@ -10,7 +12,7 @@ $(document).ready(function ()
     {
         let items = 200;
 
-        var page = document.getElementById("page");
+        page = document.getElementById("page");
 
         data.Projects.forEach(element =>
         {
@@ -31,25 +33,24 @@ $(document).ready(function ()
             }
 
             var project = document.createElement("div");
-            project.className = "col-md-3 project ";
+            project.className = "col project pallet-card";
 
             var img = document.createElement("img");
-            img.className = "project-img border rounded-5 raise-up";
-            img.id = "projectImage";
+            img.className = "project-img";
             img.src = element.Path + "Thumbnail.png";
             project.appendChild(img);
 
 
             var container = document.createElement("div");
-            container.className = "mx-auto d-flex text";
+            container.className = "mx-auto pl-2 pr-2 pb-2 d-flex text";
 
             var title = document.createElement("p");
-            title.className = "project-text font-weight-bold flex-fill title";
+            title.className = "project-text font-weight-bold flex-fill title pallet-title";
             title.innerText = element.Title;
             container.appendChild(title);
 
             var tag = document.createElement("p");
-            tag.className = "project-text flex-fill text-right";
+            tag.className = "project-text flex-fill text-right pallet-paragraph";
             tag.innerText = element.Tags.split(",")[ 2 ];
             container.appendChild(tag);
 
@@ -124,6 +125,14 @@ ShowPage = function (pagination)
         {
             if (i >= pagination * ItemsPerPage)
             {
+                if (shown % 4 == 3)
+                {
+                    var divider = document.createElement("div");
+                    divider.className = "w-100"
+                    page.appendChild(divider);
+                    projects[ i ].after(divider);
+                }
+
                 if (shown < ItemsPerPage)
                 {
                     projects[ i ].hidden = false;

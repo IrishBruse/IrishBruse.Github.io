@@ -12,17 +12,20 @@
     <link rel="stylesheet" type="text/css" href="/main.css" />
     <script src="/Navbar/navbar.js"></script>
     <link rel="stylesheet" type="text/css" href="/Navbar/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="/pallet.css" />
 
     <link rel="stylesheet" type="text/css" href="project.css" />
 </head>
 
-<body>
+<body class="pallet-background">
     <header>
         <div id="nav-placeholder"></div>
     </header>
 
+    <div style="padding: 3.5rem;"></div>
+
     <div id="search" class="mx-auto project-search">
-        <input class="form-control mx-auto" onkeyup="Searchbar()" type="text" placeholder="Search Projects">
+        <input class="project-input pallet-input pallet-card mx-auto" onkeyup="Searchbar()" type="text" placeholder="Search Projects">
     </div>
 
     <div id="page" class="page container-fluid row">
@@ -31,13 +34,13 @@
     <article id="pagin" class="text-secondary font-weight-bold">
         <nav class="justify-content-center" style="display: flex;">
             <span class="page-item prev" style="cursor: pointer;">
-                <a class="page-link">Prev</a>
+                <a class="page-link pallet-button">Prev</a>
             </span>
 
             <ul id="pageNumbers" class="pagination" style="cursor: pointer;"></ul>
 
             <span class="page-item next" style="cursor: pointer;">
-                <a class="page-link">Next</a>
+                <a class="page-link pallet-button">Next</a>
             </span>
         </nav>
     </article>

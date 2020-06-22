@@ -1,8 +1,28 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.intro-name
+{
+    font-size: 4em;
+}
+
+.intro-paragraph
+{
+    font-size: 2em;    
+}
+
 body
 {
     font-family: "Open Sans";
     margin: 0;
-    padding: 6rem 0 0 0;
+}
+
+.card-img-top
+{
+    padding: 10px;
 }
 
 .paragraph-margin
@@ -10,36 +30,27 @@ body
     margin: 2em 0% 2em 0%;
 }
 
+.intro
+{
+    margin: 0 20%;
+}
+
 .panel
 {
     padding: 0;
-    margin: 0% 10% 0% 10%;
+    margin: 0% 10%;
 }
 
-.bg-red
+.card
 {
-    background-color: rgb(216, 66, 66);
-}
-
-.bg-green
-{
-    background-color: rgb(90, 197, 108);
-}
-
-.bg-blue
-{
-    background-color: rgba(66, 133, 216);
-}
-
-.bg-gray
-{
-    background-color: #303030;
+    border-radius: 5px;
 }
 
 .btn
 {
     opacity: 1;
     transition: opacity 0.5s;
+    margin: 0.5rem 0;
 }
 
 .btn:hover
@@ -50,16 +61,89 @@ body
 .raise-up
 {
     position: relative;
-    transition: bottom 0.25s;
     bottom: 0px;
+    transition: bottom 0.25s;
 }
 
 .raise-up:hover
-{   transition: bottom 0s;
-    bottom: 5px; 
+{
+    bottom: 2px; 
+    transition: bottom 0s;
 }
 
 .card-discription
 {
-    margin: 1em 2em;
+    margin: 1rem 2rem;
+}
+
+.section
+{
+    padding: 20vh 0;
+}
+
+.discription
+{
+    height: 100%;
+    margin: 0 2rem;
+}
+
+.fade-in
+{
+    opacity: 0;
+}
+
+.footer-link
+{
+    border-radius: 0;
+    text-align: center;
+    font-weight: bolder;
+
+    float: left;
+    width: 33.33%;
+
+    padding: 1rem 0;
+}
+
+.footer-link:hover
+{
+    color:white;
+    text-decoration: none;
+}
+
+.footer-grid
+{
+    content: none; 
+    padding-top: 8rem;
+}
+
+@media only screen and (max-width: 600px)
+{
+    .intro-name
+    {
+        font-size: 2em;
+    }
+    
+    .intro-paragraph
+    {
+        font-size: 1em;    
+    }
+
+    .footer-grid
+    {
+        content: none; 
+        display: grid;
+    }
+
+    .footer-link
+    {
+        float: none;
+        width:100%;
+    }
+}
+
+ol
+{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(140px, 200px));
+    padding: 0 2rem;
 }
