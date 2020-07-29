@@ -21,9 +21,9 @@ $(document).ready(function ()
                 pageCount += 1;
 
                 var li = document.createElement("li");
-                li.className = "page-item page-number";
+                li.className = "page-item";
                 var a = document.createElement("a");
-                a.className = "page-link ";
+                a.className = "page-link pallet-button";
                 a.innerText = pageCount;
                 li.appendChild(a);
 
@@ -142,7 +142,7 @@ ShowPage = function (pagination)
         }
     }
 
-    $("#pagin li").removeClass("active").eq(pagination).addClass("active");
+    $("#pagin li").removeClass("pallet-active").eq(pagination).addClass("pallet-active");
 }
 
 Searchbar = function ()

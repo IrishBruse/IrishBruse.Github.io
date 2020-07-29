@@ -59,9 +59,19 @@
 
 .pallet-button
 {    
-    color: #A8b3A9;
+    color: #ffffff !important;
     background-color: #474B4F;
-    border-width: 0px;
-    border-radius: 0px;
-    
+    border-width: 0px !important;
+    border-radius: 0px !important;
+    height: 2.5rem;
+}
+
+.pallet-button:hover
+{    
+    background-color: #86C232;
+}
+
+.pallet-active
+{
+    background-color: #67912d;
 }
