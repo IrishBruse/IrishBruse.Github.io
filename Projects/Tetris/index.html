@@ -1,24 +1,30 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetris</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/png" href="/Images/Logo.png" />
-
+    
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/main.css" />
     <script src="/Navbar/navbar.js"></script>
     <link rel="stylesheet" type="text/css" href="/Navbar/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="/pallet.css" />
+    <link rel="stylesheet" type="text/css" href="../project.css" />
 
     <script language="javascript" type="text/javascript" src="Game.js"></script>
     <script language="javascript" type="text/javascript" src="Tetromino.js"></script>
 </head>
 
-<body>
-    <div id="nav-placeholder"></div>
+<body class="pallet-background">
+    <header>
+        <div id="nav-placeholder"></div>
+    </header>
+
+    <div style="padding: 2.5rem;"></div>
 
     <div id="sketch-div" style="width: 100%; height: 100%;"></div>
 

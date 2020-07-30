@@ -43,7 +43,7 @@ function windowResized()
 
 function draw()
 {
-    background(255);
+    clear();
     strokeWeight(2);
     stroke(0, 0, 0, 128);
     update();

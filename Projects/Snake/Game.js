@@ -21,10 +21,9 @@ function setup()
     div = document.getElementById('sketch-div');
     canvas = createCanvas(100, 100);
     canvas.parent('sketch-div');
+    canvas.mouseClicked(mouseClicked);
 
     windowResized()
-
-    canvas.mouseClicked(mouseClicked);
 
 
     for (let x = 0; x < GRID_WIDTH; x++)
@@ -50,7 +49,7 @@ function windowResized()
 
 function draw()
 {
-    background(255);
+    clear();
 
     update();
 
@@ -79,7 +78,7 @@ function draw()
 
     strokeWeight(0);
     stroke(0);
-    fill(0);
+    fill(255);
     textSize(50);
     textAlign(CENTER, TOP);
     text("Score: " + score, windowWidth / 2, 0);
