@@ -96,8 +96,6 @@ $(document).ready(function ()
         $(".project-img").click(function (e)
         {
             e.preventDefault();
-            console.log(this.parentElement);
-
             window.location.href = this.parentElement.querySelector("#path").innerText;
         });
 
