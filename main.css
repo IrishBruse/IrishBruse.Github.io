@@ -113,7 +113,6 @@ body
 .footer-grid
 {
     content: none; 
-    padding-top: 8rem;
 }
 
 @media only screen and (max-width: 600px)

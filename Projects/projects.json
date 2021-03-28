@@ -1,5 +1,11 @@
 {
-    "Projects": [
+    "Projects": 
+    [
+        {
+            "Title": "Monoboy",
+            "Path": "Asteroids/",
+            "Tags": "Emulator,C#,OpenTk"
+        },        
         {
             "Title": "Asteroids",
             "Path": "Asteroids/",
