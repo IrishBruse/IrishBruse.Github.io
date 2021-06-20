@@ -1,0 +1,2 @@
+LDtkMonogame is a importer for the monogame framework for the ldtk level editor  
+More info on the wiki for the importer here [https://https://irishbruse.github.io/LDtkMonogame/](https://irishbruse.github.io/LDtkMonogame/)

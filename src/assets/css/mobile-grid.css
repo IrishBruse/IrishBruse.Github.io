@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cell {
+    width: fit-content;
+    flex-direction: row;
+}
+
+.cell25,
+.cell33,
+.cell50,
+.cell75 {
+    width: 100%;
+}
+
+/* Desktop support for grid */
+@media only screen and (min-width: 800px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .cell25 {
+        margin: 1em;
+        width: calc(25% - 2em);
+    }
+
+    .cell33 {
+        margin: 1em;
+        width: calc(33.3% - 2em);
+    }
+
+    .cell50 {
+        margin: 1em;
+        width: calc(50% - 2em);
+    }
+
+    .cell75 {
+        margin: 1em;
+        width: calc(50% - 2em);
+    }
+}

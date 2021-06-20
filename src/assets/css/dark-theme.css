@@ -1,0 +1,18 @@
+:root {
+    --background: rgb(34, 38, 41);
+    --light-background: rgb(71, 75, 79);
+
+    --input-background: rgb(34, 38, 41);
+    --input-border: rgb(96, 101, 106);
+    --input-placeholder: rgb(132, 137, 143);
+
+    --header: rgb(255, 255, 255);
+    --paragraph: rgb(168, 179, 169);
+
+    --link: rgb(134, 194, 50);
+    --link-hover: rgb(175, 255, 64);
+
+    --pallet-red: rgb(194, 50, 50);
+    --pallet-blue: rgb(50, 124, 194);
+    --pallet-green: rgb(134, 194, 50);
+}

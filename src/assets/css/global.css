@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.seperator {
+    height: 10em;
+}
+
+/* Text Aligning */
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+
+/* container Aligning */
+.justify-left {
+    justify-content: left;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-right {
+    justify-content: right;
+}
+
+/* padding and margin stuff */
+.m0 {
+    margin: 0;
+}
+
+.p0 {
+    padding: 0;
+}
+
+#app {
+    height: 100vh;
+}
+
+.mainPage {
+    margin: 0 auto;
+    width: 95%;
+}
+
+* {
+    font-family: "Lato", sans-serif;
+    color: var(--paragraph);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--header);
+}
+
+p {
+    color: var(--paragraph);
+}
+
+a {
+    color: var(--link);
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+@media only screen and (min-width: 800px) {
+    .mainPage {
+        width: 75%;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--paragraph);
+    border-radius: 1em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--header);
+}
