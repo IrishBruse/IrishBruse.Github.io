@@ -15,7 +15,7 @@
     </div>
     <div class="text-center" v-else>
         <p>Github Api Request Failed</p>
-        <p>Refresh page to retry</p>
+        <p>Try refresing the page</p>
     </div>
 
     <div class="container repoContainer">
@@ -45,16 +45,14 @@ export default {
     setup() {
         let profile = ref({});
         let repos = ref([]);
-        let isFoundProfile = ref(false);
+        let isFoundProfile = ref(true);
 
         onMounted(() => {
-            var gh = new GitHub({
-                token: "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",
-            });
+            var gh = new GitHub();
 
             var user = gh.getUser("IrishBruse");
 
-            user.getProfile((error, result) => {
+            user.getProfile(function (error, result) {
                 if (!error) {
                     isFoundProfile.value = true;
                     profile.value = {
