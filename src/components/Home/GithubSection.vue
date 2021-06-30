@@ -1,6 +1,7 @@
 <template>
     <div class="seperator" />
     <h1 class="text-center">Github</h1>
+
     <div class="githubProfile" v-if="isFoundProfile">
         <img :src="profile.avatar" alt="" class="githubProfileImage" />
 
@@ -12,20 +13,24 @@
             </div>
         </div>
     </div>
+    <div class="text-center" v-else>
+        <p>Github Api Request Failed</p>
+        <p>Refresh page to retry</p>
+    </div>
 
     <div class="container repoContainer">
         <div class="cell50" v-for="repo in repos" :key="repo.id">
             <div class="githubRepo">
                 <a :href="repo.html_url" class="repoTitle">
                     <img class="githubLogo" :src="require('@/assets/images/Github Logo.png')" alt="" />
-                    {{ repo.name }}</a
-                >
+                    {{ repo.name }}
+                </a>
                 <p class="repoDescription">{{ repo.description }}</p>
                 <div class="repoDetails">
                     <p class="cell repoDetail">{{ repo.language }}</p>
-                    <a class="cell repoDetail repoStarButton" :href="repo.html_url + '/stargazers'" v-if="repo.stargazers_count > 0"
-                        >✰ {{ repo.stargazers_count }}</a
-                    >
+                    <a class="cell repoDetail repoStarButton" :href="repo.html_url + '/stargazers'" v-if="repo.stargazers_count > 0">
+                        ✰ {{ repo.stargazers_count }}
+                    </a>
                 </div>
             </div>
         </div>
@@ -33,45 +38,48 @@
 </template>
 
 <script>
-import { Octokit } from "@octokit/rest";
+import GitHub from "github-api";
 import { onMounted, ref } from "vue";
 
 export default {
     setup() {
         let profile = ref({});
         let repos = ref([]);
-        let isFoundProfile = ref(true);
+        let isFoundProfile = ref(false);
 
         onMounted(() => {
-            let octokit = new Octokit({ auth: "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", baseUrl: "https://api.github.com" });
-            let username = process.env.VUE_APP_GITHUB_USERNAME;
-            // Compare: https://docs.github.com/en/rest/reference/repos/#list-organization-repositories
-            octokit.rest.users.getByUsername({ username }).then((data) => {
-                if (data.status == "200") {
+            var gh = new GitHub({
+                token: "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",
+            });
+
+            var user = gh.getUser("IrishBruse");
+
+            user.getProfile((error, result) => {
+                if (!error) {
                     isFoundProfile.value = true;
                     profile.value = {
-                        name: data.data.name,
-                        username: data.data.login,
-                        avatar: data.data.avatar_url,
-                        location: data.data.location,
-                        url: data.data.html_url,
-                        repos: data.data.public_repos,
-                        reposUrl: data.data.html_url + "?tab=repositories",
-                        followers: data.data.followers,
-                        followersUrl: data.data.html_url + "/followers",
-                        following: data.data.following,
-                        followingUrl: data.data.html_url + "/following",
+                        name: result.name,
+                        username: result.login,
+                        avatar: result.avatar_url,
+                        location: result.location,
+                        url: result.html_url,
+                        repos: result.public_repos,
+                        reposUrl: result.html_url + "?tab=repositories",
+                        followers: result.followers,
+                        followersUrl: result.html_url + "/followers",
+                        following: result.following,
+                        followingUrl: result.html_url + "/following",
                     };
                 } else {
-                    profile.value = {};
-                    repos.value = [];
                     isFoundProfile.value = false;
+                    profile.value = {};
                 }
             });
 
-            repos.value = octokit.rest.repos.listForUser({ username }).then((data) => {
-                repos.value = data.data;
-                console.log(repos.value);
+            user.listRepos(function (error, result) {
+                if (!error) {
+                    repos.value = result;
+                }
             });
         });
 
